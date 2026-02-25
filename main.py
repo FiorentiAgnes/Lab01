@@ -1,7 +1,13 @@
 import random
 
-
 class Domanda:
+    testo: str
+    livello: int
+    rispCorretta: str
+    rispErrata1: str
+    rispErrata2: str
+
+
     def __init__(self, testo, livello, rispCorretta, rispErrata1, rispErrata2):
         self.testo = testo
         self.livello = livello
@@ -17,7 +23,7 @@ with open('domande.txt', 'r') as file:
         elenco_domande.append(dTemp)
 
     livelloAttuale=0
-    scelta= random.choice[(d for d in elenco_domande if int(d.livello) == livelloAttuale)]
+    scelta= random.choice[(d for d in elenco_domande if d.livello == livelloAttuale)]
     testo=scelta.testo
 
 
